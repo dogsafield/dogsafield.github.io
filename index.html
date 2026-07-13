@@ -201,17 +201,7 @@
 
 
 
-  .stats { display: grid; grid-template-columns: 1fr; gap: var(--sp-xl); margin-top: var(--sp-2xl); }
-  .stat {
-    text-align: center;
-    padding: var(--sp-lg) var(--sp-md);
-    border-radius: 16px;
-    background: rgba(107, 127, 94, 0.04);
-    border: 1px solid rgba(107, 127, 94, 0.08);
-  }
-  .stat__number { font-size: clamp(2.8rem, 6vw, 4.5rem); font-weight: 800; color: var(--color-sage); font-variant-numeric: tabular-nums; display: block; line-height: 1; letter-spacing: -0.03em; }
-  .stat__suffix { font-size: 0.6em; opacity: 0.5; }
-  .stat__label { font-size: 15px; color: var(--color-charcoal); display: block; margin-top: var(--sp-sm); opacity: 0.7; font-weight: 500; }
+
 
   .phone-wrap { display: flex; justify-content: center; align-items: center; position: relative; z-index: 2; }
   .phone-mockup { width: 220px; height: auto; }
@@ -253,14 +243,6 @@
   .footer__tagline { font-size: 14px; opacity: 0.5; margin-bottom: var(--sp-sm); font-style: italic; }
   .footer__copy { font-size: 12px; opacity: 0.3; }
 
-  .grain {
-    position: absolute; inset: 0; pointer-events: none; overflow: hidden;
-    opacity: 0.025;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    background-repeat: repeat;
-    background-size: 256px 256px;
-  }
-
 }
 
 @layer animations {
@@ -271,10 +253,7 @@
 
 }
 
-@media (min-width: 640px) {
-  .stats { grid-template-columns: repeat(3, 1fr); }
-  .stat { padding: var(--sp-xl) var(--sp-lg); }
-}
+
 
 @media (min-width: 768px) {
   .chapter { padding: var(--header-h) var(--sp-xl) var(--sp-lg); }
@@ -336,30 +315,6 @@
       </div>
     </div>
     <div class="deco-ring" style="width:50vw;height:50vw;top:10vw;right:-15vw;"></div>
-  </section>
-
-  <section class="chapter" id="ch-3">
-    <div class="grain" aria-hidden="true"></div>
-    <div class="chapter__inner chapter__inner--center" style="position:relative;z-index:2;">
-      <span class="chapter__label">Our community</span>
-      <h2 class="chapter__title" style="color:var(--color-sage);">Built for the trail</h2>
-      <p class="chapter__text" style="margin:0 auto var(--sp-lg);text-align:center;">A growing community of dogs and their favorite humans, one walk at a time.<br><!-- Stats are placeholder figures — replace with real data before launch --></p>
-      <div class="stats" id="stats">
-        <div class="stat">
-          <span class="stat__number" data-target="12000">0<span class="stat__suffix">+</span></span>
-          <span class="stat__label">meetups created</span>
-        </div>
-        <div class="stat">
-          <span class="stat__number" data-target="48">0</span>
-          <span class="stat__label">countries</span>
-        </div>
-        <div class="stat">
-          <span class="stat__number" data-target="98">0<span class="stat__suffix">%</span></span>
-          <span class="stat__label">would recommend</span>
-        </div>
-      </div>
-    </div>
-    <div class="deco-ring" style="width:45vw;height:45vw;bottom:-15vw;left:-10vw;"></div>
   </section>
 
   <section class="chapter" id="download">
@@ -431,9 +386,6 @@
   'use strict';
 
   var header = document.getElementById('header');
-  var statEls = document.querySelectorAll('.stat__number');
-
-  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function updateHeader() {
     var p = (window.scrollY || 0) / Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
@@ -441,39 +393,6 @@
   }
   window.addEventListener('scroll', updateHeader, { passive: true });
   updateHeader();
-
-  function animateStat(el) {
-    var target = parseInt(el.getAttribute('data-target'), 10);
-    var duration = 1800;
-    var startTime = null;
-    function step(ts) {
-      if (!startTime) startTime = ts;
-      var p = Math.min((ts - startTime) / duration, 1);
-      var eased = 1 - Math.pow(1 - p, 3);
-      var current = Math.round(eased * target);
-      var suffixEl = el.querySelector('.stat__suffix');
-      if (suffixEl) { el.childNodes[0].textContent = current.toLocaleString(); }
-      else { el.textContent = current.toLocaleString(); }
-      if (p < 1) window.requestAnimationFrame(step);
-    }
-    window.requestAnimationFrame(step);
-  }
-
-  if (!prefersReducedMotion) {
-    var statObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) { animateStat(entry.target); statObserver.unobserve(entry.target); }
-      });
-    }, { threshold: 0.45 });
-    statEls.forEach(function (el) { statObserver.observe(el); });
-  } else {
-    statEls.forEach(function (el) {
-      var suffixEl = el.querySelector('.stat__suffix');
-      var target = parseInt(el.getAttribute('data-target'), 10);
-      if (suffixEl) { el.childNodes[0].textContent = target.toLocaleString(); }
-      else { el.textContent = target.toLocaleString(); }
-    });
-  }
 })();
 </script>
 
