@@ -123,6 +123,8 @@
   }
   .header__cta:hover { transform: scale(1.04); background: #d49a2f; }
   .header__cta:active { transform: scale(0.97); }
+  .header__cta--subtle { background: rgba(107, 127, 94, 0.1); }
+  .header__cta--subtle:hover { background: rgba(107, 127, 94, 0.2); }
 
   .chapter {
     display: flex;
@@ -299,7 +301,10 @@
   <a href="#main" class="header__logo-link" aria-label="DogsAfield home">
     <img class="header__logo" src="logo.png" alt="DogsAfield">
   </a>
-  <a href="#download" class="header__cta">Get the app</a>
+  <div style="display:flex;gap:var(--sp-sm);align-items:center;">
+    <a href="privacy.html" class="header__cta header__cta--subtle">Privacy Policy</a>
+    <a href="#download" class="header__cta">Get the app</a>
+  </div>
 </header>
 
 <main id="main">
