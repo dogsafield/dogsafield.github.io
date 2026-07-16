@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — DogsAfield</title>
+<link rel="canonical" href="https://dogsafield.app/privacy.html">
+<style>
+@layer reset, base, components;
+
+@layer reset {
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { min-height: 100vh; }
+  a { color: inherit; -webkit-tap-highlight-color: transparent; }
+  ul { list-style: none; }
+}
+
+@layer base {
+  :root {
+    --color-sage: #6B7F5E;
+    --color-off-white: #F6F5F0;
+    --color-charcoal: #1A1A1A;
+    --color-amber: #E8A838;
+    --font-stack: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --sp-sm: 0.5rem;
+    --sp-md: 1rem;
+    --sp-lg: 2rem;
+    --sp-xl: 4rem;
+    --sp-2xl: 6rem;
+    --max-w: 1200px;
+    --header-h: 144px;
+  }
+
+  body {
+    font-family: var(--font-stack);
+    color: var(--color-charcoal);
+    background: var(--color-off-white);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 { font-weight: 700; line-height: 1.05; letter-spacing: -0.025em; }
+
+  ::selection { background: var(--color-sage); color: var(--color-off-white); }
+
+  :focus-visible { outline: 2px solid var(--color-amber); outline-offset: 2px; }
+}
+
+@layer components {
+  .skip-link {
+    position: fixed;
+    top: -100%;
+    left: var(--sp-md);
+    z-index: 1000;
+    padding: var(--sp-sm) var(--sp-md);
+    background: var(--color-charcoal);
+    color: var(--color-off-white);
+    font-size: 14px;
+    border-radius: 0 0 4px 4px;
+    transition: top 200ms ease;
+  }
+  .skip-link:focus { top: 0; }
+
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--header-h);
+    padding: 0 var(--sp-lg);
+    background: var(--color-off-white);
+    border-bottom: 1px solid rgba(107, 127, 94, 0.1);
+  }
+  .header__logo {
+    display: block;
+    height: 100%;
+    width: auto;
+    padding: 10% 0;
+    box-sizing: border-box;
+  }
+  .header__logo-link {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  .header__cta {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 20px;
+    background: var(--color-amber);
+    color: var(--color-charcoal);
+    border-radius: 6px;
+    transition: transform 150ms ease, background 150ms ease;
+  }
+  .header__cta:hover { transform: scale(1.04); background: #d49a2f; }
+  .header__cta:active { transform: scale(0.97); }
+
+  .chapter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--header-h) var(--sp-lg) var(--sp-lg);
+    position: relative;
+    overflow: hidden;
+  }
+  .chapter__inner { width: 100%; max-width: var(--max-w); margin: 0 auto; }
+
+  .policy-content h1 {
+    font-size: clamp(2.4rem, 5.5vw, 4rem);
+    margin-bottom: var(--sp-lg);
+  }
+  .policy-content h2 {
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    margin-top: var(--sp-xl);
+    margin-bottom: var(--sp-md);
+    color: var(--color-sage);
+  }
+  .policy-content p,
+  .policy-content li {
+    font-size: 17px;
+    color: var(--color-charcoal);
+    max-width: 720px;
+    margin-bottom: var(--sp-md);
+    opacity: 0.85;
+  }
+  .policy-content ul {
+    padding-left: 1.2em;
+    margin-bottom: var(--sp-md);
+  }
+  .policy-content ul li {
+    list-style: disc;
+    margin-bottom: var(--sp-sm);
+  }
+  .policy-content strong { color: var(--color-charcoal); opacity: 1; }
+  .policy-content table {
+    width: 100%;
+    max-width: 720px;
+    border-collapse: collapse;
+    margin: var(--sp-md) 0 var(--sp-lg);
+    font-size: 16px;
+  }
+  .policy-content th,
+  .policy-content td {
+    text-align: left;
+    padding: var(--sp-sm) var(--sp-md);
+    border-bottom: 1px solid rgba(107, 127, 94, 0.15);
+  }
+  .policy-content th {
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-sage);
+  }
+  .policy-content hr {
+    border: none;
+    border-top: 1px solid rgba(107, 127, 94, 0.12);
+    margin: var(--sp-xl) 0;
+  }
+  .policy-content em {
+    font-style: italic;
+    opacity: 0.7;
+  }
+  .policy-content a {
+    text-decoration: underline;
+    text-decoration-color: var(--color-sage);
+    text-underline-offset: 3px;
+  }
+  .policy-content a:hover {
+    color: var(--color-sage);
+  }
+
+  .footer {
+    background: var(--color-charcoal);
+    color: var(--color-off-white);
+    padding: var(--sp-2xl) var(--sp-lg);
+    text-align: center;
+    position: relative;
+  }
+  .footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--color-sage);
+    border-radius: 0 0 3px 3px;
+  }
+  .footer__inner { max-width: var(--max-w); margin: 0 auto; }
+  .footer__wordmark { font-size: 28px; font-weight: 800; letter-spacing: -0.03em; color: var(--color-sage); display: block; margin-bottom: var(--sp-lg); }
+  .footer__social { display: flex; justify-content: center; gap: var(--sp-lg); margin-bottom: var(--sp-lg); }
+  .footer__social a { color: var(--color-off-white); opacity: 0.6; transition: opacity 200ms ease, transform 200ms ease; }
+  .footer__social a:hover { opacity: 1; transform: translateY(-2px); }
+  .footer__tagline { font-size: 14px; opacity: 0.5; margin-bottom: var(--sp-sm); font-style: italic; }
+  .footer__copy { font-size: 12px; opacity: 0.3; }
+}
+
+@media (min-width: 768px) {
+  .chapter { padding: var(--header-h) var(--sp-xl) var(--sp-lg); }
+}
+
+@media (min-width: 1024px) {
+  .chapter { padding: var(--header-h) var(--sp-2xl) var(--sp-xl); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="header" id="header">
+  <a href="/" class="header__logo-link" aria-label="DogsAfield home">
+    <img class="header__logo" src="logo.png" alt="DogsAfield">
+  </a>
+  <a href="/#download" class="header__cta">Get the app</a>
+</header>
+
+<main id="main">
+
+  <section class="chapter">
+    <div class="chapter__inner policy-content">
+
+      <h1>Privacy Policy</h1>
+      <p><strong>Last updated:</strong> July 2026</p>
+      <p>Dogs Afield ("we", "us") helps dog owners connect at local parks and events. This policy explains what data we collect, why we need it, and your rights.</p>
+
+      <hr>
+
+      <h2>What We Collect</h2>
+      <p><strong>Account data:</strong> Your name, profile photo, and email (from Google or Apple sign-in).</p>
+      <p><strong>Dog information:</strong> Names and breeds of your dogs.</p>
+      <p><strong>Location:</strong> Your device's GPS coordinates when you use the app. This is needed to show nearby events and parks.</p>
+      <p><strong>Content you create:</strong> Events you host, RSVPs, messages to other users, and icebreaker stories on your profile.</p>
+      <p><strong>App usage:</strong> We track whether you've completed onboarding and seen introductory screens.</p>
+
+      <hr>
+
+      <h2>Why We Collect It</h2>
+      <table>
+        <thead>
+          <tr><th>Data</th><th>Reason</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Account data</td><td>To create your profile and let others identify you</td></tr>
+          <tr><td>Dog information</td><td>To show your dogs to other users</td></tr>
+          <tr><td>Location</td><td>To display nearby events and parks on the map</td></tr>
+          <tr><td>Content you create</td><td>To run events, enable messaging, and verify attendance</td></tr>
+          <tr><td>App usage</td><td>To personalize your experience and show relevant tutorials</td></tr>
+        </tbody>
+      </table>
+      <p>We process location data based on your <strong>consent</strong> — you can revoke this anytime in your device settings.</p>
+      <p>All other data is collected to provide the service you signed up for (<strong>contract</strong>).</p>
+
+      <hr>
+
+      <h2>Who We Share It With</h2>
+      <p><strong>Other users:</strong> Your name, profile photo, dogs, and icebreaker stories are visible to users at events you attend or host. Your email is never shown to others.</p>
+      <p><strong>Supabase:</strong> We use Supabase to store your data and provide authentication. They act as our data processor.</p>
+      <p><strong>Google Maps:</strong> Map tiles and location services are provided by Google. Their use of location data is governed by <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</p>
+      <p><strong>Apple:</strong> If you sign in with Apple, authentication is handled by Apple. We do not receive your Apple email if you choose to hide it.</p>
+
+      <hr>
+
+      <h2>How Long We Keep Your Data</h2>
+      <p>We keep your data while your account is active. If you delete your account, we remove all your personal data within 30 days.</p>
+
+      <hr>
+
+      <h2>Your Rights</h2>
+      <p>Under GDPR, you have the right to:</p>
+      <ul>
+        <li><strong>Access</strong> your data — ask us what we hold about you</li>
+        <li><strong>Correct</strong> your data — fix anything that's wrong</li>
+        <li><strong>Delete</strong> your data — remove your account and all associated information</li>
+        <li><strong>Export</strong> your data — receive a copy in a portable format</li>
+        <li><strong>Restrict processing</strong> — ask us to limit how we use your data</li>
+        <li><strong>Object</strong> to processing — tell us to stop using your data in certain ways</li>
+        <li><strong>Withdraw consent</strong> — change your mind at any time (especially for location)</li>
+      </ul>
+      <p>To use any of these rights, contact us at the email below.</p>
+
+      <hr>
+
+      <h2>Children</h2>
+      <p>Dogs Afield is not intended for anyone under 16. We do not knowingly collect data from children.</p>
+
+      <hr>
+
+      <h2>Changes to This Policy</h2>
+      <p>If we update this policy, we'll notify you in the app. The "Last updated" date at the top will always reflect the current version.</p>
+
+      <hr>
+
+      <h2>Contact Us</h2>
+      <p>For questions about this policy or your data, email: <strong>main@spectrumveil.com</strong></p>
+      <p>If you're in the EU and we haven't resolved your concern, you can lodge a complaint with your local data protection authority.</p>
+
+      <hr>
+
+      <p><em>This policy applies to the Dogs Afield mobile application.</em></p>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="footer__inner">
+    <span class="footer__wordmark">DogsAfield</span>
+    <div class="footer__social">
+      <a href="#" aria-label="DogsAfield on Instagram">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+      </a>
+      <a href="#" aria-label="DogsAfield on Twitter">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="#" aria-label="DogsAfield on YouTube">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      </a>
+    </div>
+    <p class="footer__tagline">Made with love for dogs</p>
+    <p class="footer__copy">&copy; 2026 DogsAfield</p>
+  </div>
+</footer>
+
+</body>
+</html>
