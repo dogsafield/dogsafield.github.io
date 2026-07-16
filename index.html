@@ -221,10 +221,6 @@
   .chapter--dark .cta--secondary { border-color: var(--color-off-white); color: var(--color-off-white); }
   .chapter--dark .cta--secondary:hover { background: var(--color-off-white); color: var(--color-charcoal); }
 
-
-
-
-
   .phone-wrap { display: flex; justify-content: center; align-items: center; position: relative; z-index: 2; }
   .phone-mockup { width: 220px; height: auto; }
   .phone-mockup--float { animation: float-phone 3.5s ease-in-out infinite; }
@@ -265,6 +261,27 @@
   .footer__tagline { font-size: 14px; opacity: 0.5; margin-bottom: var(--sp-sm); font-style: italic; }
   .footer__copy { font-size: 12px; opacity: 0.3; }
 
+  /* Google OAuth Compliance Section */
+  .oauth-compliance {
+    background: rgba(107, 127, 94, 0.08);
+    border: 1px solid rgba(107, 127, 94, 0.2);
+    border-radius: 8px;
+    padding: var(--sp-md);
+    margin-top: var(--sp-lg);
+    text-align: left;
+    max-width: 520px;
+  }
+  .oauth-compliance h3 {
+    font-size: 15px;
+    color: var(--color-sage);
+    margin-bottom: var(--sp-sm);
+    font-weight: 700;
+  }
+  .oauth-compliance p {
+    font-size: 13px;
+    opacity: 0.9;
+    line-height: 1.5;
+  }
 }
 
 @layer animations {
@@ -272,10 +289,7 @@
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-14px); }
   }
-
 }
-
-
 
 @media (min-width: 768px) {
   .chapter { padding: var(--header-h) var(--sp-xl) var(--sp-lg); }
@@ -302,7 +316,7 @@
     <img class="header__logo" src="logo.png" alt="DogsAfield">
   </a>
   <div style="display:flex;gap:var(--sp-sm);align-items:center;">
-    <a href="privacy.html" class="header__cta header__cta--subtle">Privacy Policy</a>
+    <a href="https://dogsafield.app/privacy.html" class="header__cta header__cta--subtle">Privacy Policy</a>
     <a href="#download" class="header__cta">Get the app</a>
   </div>
 </header>
@@ -330,6 +344,12 @@
         <h2 class="chapter__title" style="color:var(--color-sage);">Find your pack</h2>
         <p class="chapter__text" style="margin-bottom:var(--sp-lg);">Connect with dogs and humans who share your favorite trails, parks, and fire hydrants. Your next best friend is just a walk away.</p>
         <p class="chapter__text">DogsAfield is a social app that helps dog owners discover, host, and attend local meetups — pack walks, picnics, and field games. Browse a live map of nearby events, RSVP with one tap, and after the walk a quick roll call confirms who you met, unlocking direct messaging with your new packmates. Your location is used only to show you nearby events — it's never stored or tracked in the background.</p>
+        
+        <!-- Crucial Google OAuth Transparency Block (Addresses Core Purpose Flag) -->
+        <div class="oauth-compliance">
+          <h3>Secure Google Sign-In Context</h3>
+          <p><strong>DogsAfield</strong> uses secure Google Authentication to simplify account creation and log you in. We only request your standard profile information (such as your public name, profile photo, and email address). This data is strictly utilized to personalize your profile and verify your account. We never track or share your Google profile metrics with external third parties.</p>
+        </div>
       </div>
       <div class="chapter__side" style="position:relative;z-index:2;">
         <p style="font-size:18px;margin-bottom:var(--sp-md);"><strong>Discover Meetups</strong> — Browse local gatherings by location, breed, or activity.</p>
@@ -388,11 +408,15 @@
       </a>
     </div>
     <p class="footer__tagline">Made with love for dogs</p>
+    
+    <!-- Required Legal Policy Disclaimer & Google Limited Use compliance statement (Speeds up approval) -->
+    <p class="footer__tagline" style="font-size: 11px; opacity: 0.6; max-width: 600px; margin: 0 auto var(--sp-md) auto; font-style: normal; line-height: 1.4;">
+      The <strong>DogsAfield</strong> website uses APIs and secure Google Sign-In. Our application's use and transfer of metadata received from Google APIs to any other client software will strictly comply with the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener" style="text-decoration: underline;">Google API Services User Data Policy</a>, including its Limited Use guidelines. Learn more on our <a href="https://dogsafield.app/privacy.html" style="text-decoration: underline;">Privacy Policy</a>.
+    </p>
+    
     <p class="footer__copy">&copy; 2026 DogsAfield</p>
   </div>
 </footer>
-
-
 
 </body>
 </html>
